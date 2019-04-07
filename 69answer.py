@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/4/7 20:43
 # @Author  : freelikeff
-# @Site    : 
+# @Site    : https://www.zhihu.com/question/35122102
 # @File    : 69answer.py
 # @Software: PyCharm
 
 
 # 其实应该用二分法来做，但是这里太小了我写不下了
+# 建议看一下cite的东西
 class Solution(object):
     def mySqrt(self, x):
         """
