@@ -1,3 +1,3 @@
--itertools模块
-  -permutation：排列
-  -combination 组合
+- itertools模块
+  - permutation：排列
+  - combination 组合
