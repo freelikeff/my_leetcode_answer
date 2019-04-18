@@ -126,4 +126,101 @@ functools模块
    ``` 
    `fib.cache_clearn()    #清空缓存`
  
-            
+读写文件
+===
+1. 读写pkl  <https://docs.python.org/3/library/pickle.html>
+	- 支持python的原生容器和其他（相信自己你用不上的），可嵌套
+	- example
+		```python
+		import pickle
+
+		original_data = [("大江"), (), (), {}, {1: "东去", 3: 4}]
+
+		with open('data.pkl', 'wb') as f:
+			pickle.dump(original_data, f)
+
+		with open('data.pkl', 'rb') as f:
+			new_data = pickle.load(f)
+		print(new_data)
+		```
+	- 经测试发现，后缀名可以自定义。但是最好规范下使用".pkl" or ".pickle"
+2. 读写json文件
+	- 其实就是字典文件  
+	    ```python
+	    # TODO:
+
+        ```        
+代码规范
+===
+1. TODO and FIXME
+    - TODO注释应该在所有开头处包含”TODO”字符串,
+    - 紧跟着是用括号括起来的你的名字, email地址或其它标识符.
+    - 然后是一个可选的冒号. 接着必须有一行注释, 解释要做什么. 
+    - example:   
+         `# TODO(freelikeff): what you want to do `
+    - TODO表示未完成准备做，FIXME表示代码有误，需要修改
+***
+进制转换
+===
+1. int(x, base=10)
+	- 将一个base进制的字符串转化为十进制的数
+	- example
+	`int("20",3)`  意为将三进制数20转化为十进制数返回，即返回6。
+	- 注意：
+		- 字符串可开始于'+' or '-',前后可以有空格。例 `int(" -20 ",3)`,返回-6
+		- 若base进制，那么字符串中的字符必须小于base， 
+		其中 a 到 z （或 A 到 Z ）表示 10 到 35，大小写可以混用
+		- 2、8、16 进制的数字可以在代码中用 0b/0B 、 0o/0O 、 0x/0X 前缀来表示。
+		那么就不要用base参数了（或者置base=0精确解释字符串）。别混用!
+		
+2. bin(x),oct(dec)，hex(x)
+	- 将整数x转化为以"0b"('0o','0x')开始的二(八，十六)进制数的字符串形式
+	- example `bin(-8)` 返回"-0b1000",只能传入整数
+	- 如果要获取浮点数的十六进制字符串形式，请使用 float.hex() 方法。（**别想太多只有十六进制可以**）
+	
+3. chr(i)
+	- 传入整数，返回字符。映射关系为Unicode，例如`chr(8364)` 返回'€'(谁知道这是个什么鬼符号)
+	- 实参的合法范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）
+	
+4. ord(char) 
+	- 对表示单个 Unicode 字符的字符串，返回代表它 Unicode 码点的整数。
+	例如 `ord('€')` ）返回 8364 。这是 chr() 的逆函数。
+	
+5. exec()
+	- 传入一个字符串，则会当做代码执行
+	- example：
+	```python
+	class A:
+    	pass
+
+	exec(r"a=A()")
+	print(a)
+	```
+	out`<__main__.A object at 0x000002534A7AE320>`
+
+6. exec()
+	- 传入一个字符串，则会当做代码运行并有返回值
+	- example：
+	```python
+	class A:
+    	pass
+
+	a=eval(r"A()")
+	print(a)
+	```
+	out`<__main__.A object at 0x000002534A7AE320>`
+	
+	 _**如果经过以上的对比还看不出差别，我&trade; **_
+
+7. compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
+	- 上两个是这个比的情人，我也不想写了
+
+8. divmod(a, b)
+	- 返回（商，余数）这个元组
+	-唉，和我想的有点不一样
+	```python
+	-4//3
+	Out[2]: -2
+	```
+9. filter(function, iterable)
+	- function为一个返回T or F的函数，过滤掉iterable中的F，返回一个迭代器

@@ -6,7 +6,8 @@
 # @File    : 17answer.py
 # @Software: PyCharm
 
-TRAN_DICT={'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+TRAN_DICT = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+
 
 # 应该是一个动态规划的思想，比较简单，也pythonic
 class Solution:
@@ -20,7 +21,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    s=Solution()
-    inpt="274"
-    answer=s.letterCombinations(inpt)
+    s = Solution()
+    inpt = "274"
+    answer = s.letterCombinations(inpt)
     print(answer)

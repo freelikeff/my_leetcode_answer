@@ -61,6 +61,7 @@ class Solution2:
             l1.next = self.mergeTwoLists(l1.next, l2)
             return l1
 
+
 # 感觉是作弊，返回的list[int],而不是链表，不过确实也能通过，这谁顶得住
 class Solution3:
     def mergeTwoLists(self, l1, l2):
