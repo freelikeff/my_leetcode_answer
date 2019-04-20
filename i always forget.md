@@ -238,35 +238,37 @@ functools模块
 	
 random module 
 ===
-1.<https://docs.python.org/zh-cn/3/library/random.html>
+1.<https://docs.python.org/zh-cn/3/library/random.html>    
+***
 2.**Warning:The pseudo-random generators of this module should not be used for security purposes. For security or cryptographic uses, see the `secrets` module.**(说的我好想用得到似的)
+***
 3.**random.randrange(srart,stop,step)**
-	- 在[start,start+step,start+2step,···，且到但是不包含stop的数列中随机取一个数
-	- 只输入一个值，那么相当于传入(srart=0,stop=inpt,step=1)
-	- 只输入两个值，那么就不用多BB了吧。
+	- 在[start,start+step,start+2step,···，且到但是不包含stop的数列中随机取一个数  
+	- 只输入一个值，那么相当于传入(srart=0,stop=inpt,step=1)  
+	- 只输入两个值，那么就不用多BB了吧。  
+***	
+4.**random.randint(a:int, b:int)**  
+	- 返回[a,b]闭区间的一个随机整数  
+***
+5.**random.choice(seq)**  
+	- 从序列seq中随机选择一个元素（seq不能为空）  
+***
+6.**random.choices(population, weights=None, *, cum_weights=None, k=1)**  
+	- 放回重复抽样  
+	- weights为相对权重，cum_weights为累积权重  
+	- weights=[5,10,3,2],等价于cum_weights=[5,15,18,20]  
+***	
 	
-4.**random.randint(a:int, b:int)**
-	- 返回[a,b]闭区间的一个随机整数
-
-5.**random.choice(seq)**
-	- 从序列seq中随机选择一个元素（seq不能为空）
-
-6.**random.choices(population, weights=None, *, cum_weights=None, k=1)**
-	- 放回重复抽样
-	- weights为相对权重，cum_weights为累积权重
-	- weights=[5,10,3,2],等价于cum_weights=[5,15,18,20]
-	
-	
-7.**random.sample(population, k)**
-	- 不放回抽样
-	- 结果不一定按照原来的顺序
-	
+7.**random.sample(population, k)**  
+	- 不放回抽样  
+	- 结果不一定按照原来的顺序  
+***	
 8.**random.shuffle(x)**
-	- 将序列x就地打乱
-	- 如果对于不可变序列，需要返回一个打乱的副本，那么请使用   
-	 random.sample(x, kx=len(x))
+	- 将序列x就地打乱  
+	- 如果对于不可变序列，需要返回一个打乱的副本，那么请使用     
+	 `random.sample(x, kx=len(x))`
 	 
-	 
+***	 
 	 
 	 
 	 
