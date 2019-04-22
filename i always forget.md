@@ -137,7 +137,7 @@ functools模块
            return fib(n-1) + fib(n-2)
        [fib(i) for i in range(20)]
     
-   out:略
+   out:略略
    ```
    ```
        fib.cache_info()

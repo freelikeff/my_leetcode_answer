@@ -27,6 +27,7 @@ class Solution(object):
                 max = nums[i] - nums[i - 1]
         return max
 
+
 if __name__ == "__main__":
     s = Solution()
     inpt = [1, 2, 1, 3, 5, 6, 4]
