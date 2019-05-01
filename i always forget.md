@@ -283,10 +283,59 @@ random module
         - 高斯分布 mu均值，sigma标准差
 ---
 
-np.random模块
+np.random模块  #TODO
 ===
     
+***
+pysnooper模块
+===
+- 用于debug
+- ```python 
+    import pysnooper
 
+
+    @pysnooper.snoop("./snooper.log")
+    def numbers2bits(number):
+        if number:
+            bits = []
+            while number:
+                number, remainder = divmod(number, 2)
+                bits.insert(0, remainder)
+            return bits
+        return [0]
+
+    numbers2bits(6)
+    ```
+    out:
+    ```
+    Starting var:.. number = 4
+    08:57:00.991927 call         5 def numbers2bits(number):
+    08:57:00.992927 line         6     if number:
+    08:57:00.992927 line         7         bits = []
+    New var:....... bits = []
+    08:57:00.992927 line         8         while number:
+    08:57:00.992927 line         9             number, remainder = divmod(number, 2)
+    New var:....... remainder = 0
+    Modified var:.. number = 2
+    08:57:00.992927 line        10             bits.insert(0, remainder)
+    Modified var:.. bits = [0]
+    08:57:00.992927 line         8         while number:
+    08:57:00.992927 line         9             number, remainder = divmod(number, 2)
+    Modified var:.. number = 1
+    08:57:00.992927 line        10             bits.insert(0, remainder)
+    Modified var:.. bits = [0, 0]
+    08:57:00.992927 line         8         while number:
+    08:57:00.992927 line         9             number, remainder = divmod(number, 2)
+    Modified var:.. number = 0
+    Modified var:.. remainder = 1
+    08:57:00.992927 line        10             bits.insert(0, remainder)
+    Modified var:.. bits = [1, 0, 0]
+    08:57:00.992927 line         8         while number:
+    08:57:00.992927 line        11         return bits
+    08:57:00.992927 return      11         return bits
+    Return value:.. [1, 0, 0]
+    ```
+***
     	 
 	 
 	 
