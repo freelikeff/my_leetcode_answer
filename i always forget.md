@@ -1,5 +1,6 @@
-itertools模块
+itertools模块(https://github.com/Rosevil1874/LeetCode/tree/master/Python-Solution)  https://github.com/algorhythms/LeetCode  
 === 
+
 _**返回的应该是个迭代器，每次的都是一个元组**_
 >https://docs.python.org/3/library/itertools.html
 
