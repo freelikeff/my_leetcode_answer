@@ -1,9 +1,9 @@
 #!D:\coding\my_venv\Scripts\python3
-# -*- coding: utf-8 -*- 
-# @Time : 2019/5/5 16:14 
-# @Author : freelikeff 
+# -*- coding: utf-8 -*-
+# @Time : 2019/5/5 16:14
+# @Author : freelikeff
 # @Site :  全排列
-# @File : 46answer.py 
+# @File : 46answer.py
 # @Software: PyCharm
 
 
@@ -30,6 +30,9 @@ class Solution:
 if __name__ == '__main__':
     import pprint
     s = Solution()
-    inpt = [1, 2, 3, 4, 5]
+    inpt = list("01234")
     answer = s.permute(inpt)
     pprint.pprint(answer)
+
+
+

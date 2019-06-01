@@ -23,7 +23,6 @@ class Solution(object):
         return [int(item) for item in list(str(int("".join([str(item) for item in digits])) + 1))]
 
 
-
 # not in-place
 class Solution2:
     def plusOne(self, digits):

@@ -337,8 +337,28 @@ pysnooper模块
     Return value:.. [1, 0, 0]
     ```
 ***
+#python d的多元赋值
+leetcode的206题反转链表，有一段代码
+```python 
+class Solution3:
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        temp, front = head, None
+        while temp:
+            front, front.next, temp = temp, front, temp.next
+        return front
+``` 
+倒数第二行
+- 个人认为是这样的，先创建右边的临时变量，然后一个一个一个的赋给左边，也就是说，右边的不会变，左边的会变
+- 过程：
+    - 开始时temp=head,front=None
+    - 然后右边为 head(的一个引用)，None，第二个节点的一个引用
+    - 一一赋给左边，即front变为head(的一个引用)，然后front.next即head.next变为None，temp又贴到的第二个节点上
+    
     	 
-	 
 	 
 	 
 	 

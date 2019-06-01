@@ -41,10 +41,6 @@ class Solution(object):
         return start
 
 
-
-
-
-
 if __name__ == "__main__":
     # Definition for singly-linked list.
     class ListNode(object):
