@@ -106,6 +106,25 @@ def explore(node: TreeNode, res: list):
         res.append(',#')
 
 
+# 层次遍历,用队列实现
+def BT_level_order_traversal(root: TreeNode) -> List:
+    if not root:
+        return []
+    ans = []
+    deque = [root]
+    while deque:
+        temp_node=deque.pop(0)
+        if temp_node:
+            deque.append(temp_node.left)
+            deque.append(temp_node.right)
+            ans.append(temp_node.val)
+        else:
+            ans.append(None)
+    return ans
+
+
+
+
 if __name__ == '__main__':
     preorder_seq = [4, 2, 1, 3, 6, 5, 7]
     middleorder_seq = [1, 2, 3, 4, 5, 6, 7]
