@@ -27,6 +27,24 @@ def maketree(pre, tin):
     return root
 
 
+# 这个复杂是什么意思呢，主要是解决节点值有重复，上面的简单版会报错
+def maketree_complex(pre, tin):
+    if len(pre) == 0 | len(tin) == 0:
+        return None
+    root = TreeNode(pre[0])
+    chosen_idex = []
+    for i, item in enumerate(tin):
+        if item == pre[0]:
+            chosen_idex.append(i)
+    for _ in chosen_idex:
+        try:
+            root.left = maketree(pre[1:_ + 1], tin[:_])
+            root.right = maketree(pre[_ + 1:], tin[_ + 1:])
+            return root
+        except:
+            continue
+
+
 # DLR递归 参考leetcode144
 def DLRdg(root: TreeNode) -> List[int]:
     if not root:
@@ -58,7 +76,7 @@ def LDRdg(root: TreeNode) -> List[int]:
     else:
         return LDRdg(root.left) + [root.val] + LDRdg(root.right)
 
-@snoop()
+
 def LDRnodg(root: TreeNode) -> List[int]:
     if not root:
         return []
@@ -74,12 +92,26 @@ def LDRnodg(root: TreeNode) -> List[int]:
         if stack:  # 栈非空，就需要遍历了
             p = stack.pop()
             ans.append(p.val)
-            cur=p.right
+            cur = p.right
     return ans
+
+
+def explore(node: TreeNode, res: list):
+    if node:
+        res.append(',' + str(node.val))
+        res.append(',')
+        explore(node.left, res)
+        explore(node.right, res)
+    else:
+        res.append(',#')
+
 
 if __name__ == '__main__':
     preorder_seq = [4, 2, 1, 3, 6, 5, 7]
     middleorder_seq = [1, 2, 3, 4, 5, 6, 7]
-    treeRoot1 = maketree(preorder_seq, middleorder_seq)
+    treeRoot1 = maketree_complex([8, 8, 9, 2, 4, 7, 7], [9, 8, 4, 2, 7, 8, 7])
     print(DLRnodg(treeRoot1))
     print(LDRnodg(treeRoot1))
+    an = []
+    explore(treeRoot1, an)
+    print(an)
