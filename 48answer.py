@@ -26,6 +26,7 @@ class Solution:
 # map 函数对可迭代对象实现func，将结果打爆列表返回
 # zip函数，对一系列可迭代对象，将对象中对应的元素打包成一个个元组，返回列表
 # *这个符号用于解包
+# 但其实不是就地的，小瑕疵
 class Solution2:
     def rotate(self, matrix):
         """

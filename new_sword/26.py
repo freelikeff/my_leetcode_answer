@@ -1,15 +1,11 @@
 #!D:\my_venv\Scripts python
 # -*- coding: utf-8 -*-
-# @Time    : 2019/6/2 19:00
+# @Time    : 2019/6/12 17:15
 # @Author  : frelikeff
-# @Site    : 
-# @File    : sword18.py
+# @Site    : 这个函数是判断t是否是s子结构（重合即可），leetcode572判断是不是子树（必须是子树或者孙子树），两个概念
+# @File    : 26.py
 # @Software: PyCharm
 
-from utils.maketree import TreeNode
-
-
-# 这个函数是判断t是否是s子结构，leetcode572判断是不是子树，两个概念
 
 def hasSubtree(s, t):
     flag = False
@@ -21,7 +17,7 @@ def hasSubtree(s, t):
 
     return flag
 
-
+# 判断t 是不是 s的前缀树
 def is_prefixtree(s, t):
     if not t:
         return True

@@ -46,7 +46,7 @@ bisect模块（进行一些二分插入）
      bisect.bisect_left(sorted_list, target, lo=0, hi=len(a))
      ```
      
-  - 返回一个仍保持有序的插入位置，尽可能靠左，即插入位置将有序列表分成两部分  
+  - 返回一个仍保持有序的插入位置，尽可能靠右，即插入位置将有序列表分成两部分  
       all of the left item <= target < all of the right item
   ```
   bisect.bisect_right(sorted_list, target, lo=0, hi=len(a))   
@@ -359,7 +359,25 @@ class Solution3:
     - 一一赋给左边，即front变为head(的一个引用)，然后front.next即head.next变为None，temp又贴到的第二个节点上
     
     	 
-	 
+# 返回的列表有可能是个引用
+```python
+def test(nums1, f):
+    if f:
+        return nums1
+    return [2, 3, 4, 5]
+
+
+a = [1, 2, 3, 4, 5]
+ans = test(a,1)
+print(ans)
+a[1]=9
+print(ans)
+```
+out
+```python
+[1, 2, 3, 4, 5]
+[1, 9, 3, 4, 5]
+```
 	 
 	 
 	 
