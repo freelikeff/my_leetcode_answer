@@ -1,14 +1,16 @@
 #!D:\my_venv\Scripts python
 # -*- coding: utf-8 -*-
-# @Time    : 2019/6/5 17:06
+# @Time    : 2019/6/13 10:14
 # @Author  : frelikeff
 # @Site    : 426answer
-# @File    : 27.py
+# @File    : 36.py
 # @Software: PyCharm
-from utils.maketree import TreeNode,maketree
 
 
-def convert_two(root):
+from utils.maketree import TreeNode, maketree
+
+
+def convert_two(root: TreeNode):
     if not root:
         return None, None
     if not root.left and not root.right:
@@ -17,7 +19,7 @@ def convert_two(root):
         left_part = convert_two(root.left)
         left_part[1].right = root
         root.left = left_part[1]
-        return left_part[0],root
+        return left_part[0], root
     elif not root.left:
         right_part = convert_two(root.right)
         right_part[0].left = root
@@ -31,7 +33,6 @@ def convert_two(root):
         right_part[0].left = root
         root.right = right_part[0]
         return left_part[0], right_part[1]
-
 
 
 class Solution:
@@ -48,11 +49,6 @@ class Solution:
         while head:
             print(head.val, end=" ")
             head = head.left
-
-
-
-
-
 
 
 if __name__ == '__main__':

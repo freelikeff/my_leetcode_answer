@@ -1,10 +1,11 @@
 #!D:\my_venv\Scripts python
 # -*- coding: utf-8 -*-
-# @Time    : 2019/6/5 16:10
+# @Time    : 2019/6/13 10:12
 # @Author  : frelikeff
 # @Site    : 
-# @File    : 25.py
+# @File    : 34.py
 # @Software: PyCharm
+
 from typing import List
 from utils.maketree import TreeNode, maketree
 

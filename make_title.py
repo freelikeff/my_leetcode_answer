@@ -6,5 +6,5 @@
 # @File    : make_title.py
 # @Software: PyCharm
 
-inpt="find-all-duplicates-in-an-array"
+inpt="maximum-frequency-stack"
 print(inpt.replace("-","_"))

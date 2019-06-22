@@ -51,8 +51,10 @@ class MinStack(object):
 if __name__ == "__main__":
     # Your MinStack object will be instantiated and called as such:
     obj = MinStack()
+    print(obj.save_value)
     obj.push(3)
-    obj.pop()
+
+    obj.push(4)
     param_3 = obj.top()
     param_4 = obj.getMin()
     print(param_3, param_4)

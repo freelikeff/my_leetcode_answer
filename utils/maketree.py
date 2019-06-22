@@ -113,7 +113,7 @@ def BT_level_order_traversal(root: TreeNode) -> List:
     ans = []
     deque = [root]
     while deque:
-        temp_node=deque.pop(0)
+        temp_node = deque.pop(0)
         if temp_node:
             deque.append(temp_node.left)
             deque.append(temp_node.right)
@@ -123,12 +123,11 @@ def BT_level_order_traversal(root: TreeNode) -> List:
     return ans
 
 
-
-
 if __name__ == '__main__':
     preorder_seq = [4, 2, 1, 3, 6, 5, 7]
     middleorder_seq = [1, 2, 3, 4, 5, 6, 7]
     treeRoot1 = maketree_complex([8, 8, 9, 2, 4, 7, 7], [9, 8, 4, 2, 7, 8, 7])
+    # my_tree = maketree([1, 2, 4, 5, 8, 9, 3, 6, 7], [4, 2, 8, 5, 9, 1, 6, 3, 7])
     print(DLRnodg(treeRoot1))
     print(LDRnodg(treeRoot1))
     an = []

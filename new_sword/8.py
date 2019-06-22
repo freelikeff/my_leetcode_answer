@@ -81,7 +81,7 @@ class Solution:  # TODO: LRD
 if __name__ == '__main__':
     my_tree = make_com_tree([1, 2, 4, 5, 8, 9, 3, 6, 7], [4, 2, 8, 5, 9, 1, 6, 3, 7])
     print(my_tree)
-    inpt = my_tree.right.right
+    inpt = my_tree.right
     print(inpt.val)
     s = Solution()
     ans = s.DLR_GetNext(inpt)
