@@ -95,11 +95,11 @@ class Solution2:
         # corner case
         if not len(nums) or target < nums[0] or target > nums[-1]:
             return [-1, -1]
-        return [binary_search_left(nums,target),binary_search_right(nums,target)]
+        return [binary_search_left(nums, target), binary_search_right(nums, target)]
 
 
 if __name__ == '__main__':
     s = Solution2()
-    inpt = [5,7,7,8,8,10],8
+    inpt = [5, 7, 7, 8, 8, 10], 8
     answer = s.searchRange(*inpt)
     print(answer)
