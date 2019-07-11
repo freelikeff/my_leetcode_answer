@@ -58,6 +58,10 @@ def CocktailSort(nums: List) -> None:
 
 
 if __name__ == '__main__':
-    nums = [3, 6, 4, 8, 9, 2, 2, 2, 12, 7, 6]
-    CocktailSort(nums)
-    print(nums)
+    import random
+
+    random.seed(1130)
+    for i in range(10):
+        nums = random.sample(range(1000), 100)
+        CocktailSort(nums)
+        print(nums)

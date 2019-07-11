@@ -3,7 +3,7 @@
 # @Time : 2019/5/5 16:14
 # @Author : freelikeff
 # @Site :  全排列
-# @File : 46answer.py
+# @File : 46.py
 # @Software: PyCharm
 
 

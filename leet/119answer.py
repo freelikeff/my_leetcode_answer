@@ -13,7 +13,7 @@ class Solution(object):
         :type rowIndex: int
         :rtype: List[int]
         """
-        numRows+=1
+        numRows += 1
         if numRows == 0:
             return []
         if numRows == 1:
@@ -23,7 +23,7 @@ class Solution(object):
             return front
 
         for i in range(2, numRows):
-            the = [1 for j in range(i + 1)]
+            the = [1 for _ in range(i + 1)]
             for k in range(1, i):
                 the[k] = front[k - 1] + front[k]
 

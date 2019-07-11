@@ -54,7 +54,7 @@ class Solution3:
 
 
 if __name__ == '__main__':
-    s = Solution3()
+
     q=Solution2()
     for item in range(100):
-        print(s.fib(item),"-->",q.fib(item))
+        print(q.fib(item))
