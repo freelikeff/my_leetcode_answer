@@ -36,5 +36,5 @@ def findRepeat2(nums: List[int]) -> int:
                 nums[i], nums[temp] = nums[temp], nums[i]
 
 
-inpt = [0,0,0]
+inpt = [0, 0, 0]
 print(findRepeat2(inpt))

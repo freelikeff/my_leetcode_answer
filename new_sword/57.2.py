@@ -40,17 +40,17 @@ def FindContinueSequence(s: int) -> List[List[int]]:
     return ans
 
 
-# 利用等差数列求和公式，算出来首项后判断是否是整数，如果是整数，说明符合要求
+# 利用等差数列求和公式，算出来首项后判断是否是整数，如果是整数，说明符合要求，效率并不咋地
 def my_FindContinueSequence(s: int) -> List[List[int]]:
     assert s >= 3
     ans = []
     for n in range(2, s):
         first = s / n + (1 - n) / 2
-        if abs(int(first))==first:
+        if abs(int(first)) == first:
             ans.append([int(first), n])
     return ans
 
 
 if __name__ == '__main__':
-    ans = my_FindContinueSequence(45) # [[1, 9], [5, 10], [7, 11], [14, 16], [22, 23]]
+    ans = my_FindContinueSequence(45)  # [[1, 9], [5, 10], [7, 11], [14, 16], [22, 23]]
     print(ans)

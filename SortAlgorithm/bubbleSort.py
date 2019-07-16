@@ -62,6 +62,7 @@ if __name__ == '__main__':
 
     random.seed(1130)
     for i in range(10):
-        nums = random.sample(range(1000), 100)
+        nums = random.sample(range(15), 13)
+        print(nums)
         CocktailSort(nums)
         print(nums)
