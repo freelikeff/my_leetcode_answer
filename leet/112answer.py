@@ -6,6 +6,7 @@
 # @File    : 112answer.py
 # @Software: PyCharm
 from typing import List
+
 """
 给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
 
@@ -61,8 +62,8 @@ class Solution2:
                 stack.append((v + rt.val, rt.left))
         return False
 
+
 # 加大难度，打印出所有路径
 class Solution3:  # TODO
     def hasPathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
         return False
-

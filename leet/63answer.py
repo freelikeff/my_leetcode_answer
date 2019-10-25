@@ -9,7 +9,7 @@
 
 # 动态规划，每个地方只能从左边或者上边来，那么到这个点的途径就等于左边+右边
 class Solution(object):
-    def uniquePathsWithObstacles(self, obstacleGrid): # TODO(freelikeff): 能否利用dfs？
+    def uniquePathsWithObstacles(self, obstacleGrid):
         """
         :type obstacleGrid: List[List[int]]
         :rtype: int

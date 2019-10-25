@@ -122,6 +122,22 @@ def BT_level_order_traversal(root: TreeNode) -> List:
             ans.append(None)
     return ans
 
+# 后序遍历的偷懒方式，如果我没可以得到根右左，那么逆序即可得到左右根
+# 根右左 可以利用前序遍历稍微修改一下即可。
+def LRD_useDRL(root:TreeNode)-> List:
+    ans = []
+    stack = []
+    if not root:
+        return []
+
+    stack.append(root)
+    while stack:
+        cur_node = stack.pop()
+        if cur_node:
+            ans.append(cur_node.val)
+            stack.extend([cur_node.right, cur_node.left])
+    return ans[::-1]
+
 
 if __name__ == '__main__':
     preorder_seq = [4, 2, 1, 3, 6, 5, 7]
