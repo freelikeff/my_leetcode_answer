@@ -108,8 +108,8 @@ if __name__ == '__main__':
     import random
     from SortAlgorithm.testit import test_sorted
     random.seed(1130)
-    for i in range(10):
-        nums = random.sample(range(1000), 20)
+    for i in range(1):
+        nums = random.sample(range(40), 16)
         QuickSort_ndg(nums)
         print(nums,end="  ")
         print(test_sorted(nums))
