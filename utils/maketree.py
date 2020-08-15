@@ -139,13 +139,48 @@ def LRD_useDRL(root:TreeNode)-> List:
     return ans[::-1]
 
 
+def showtree(root:TreeNode):
+    def findh(root:TreeNode):
+        if not root:
+            return 0
+        else:
+            return max(findh(root.left),findh(root.right))+1
+    h=findh(root)
+    floor=[root]
+
+    def sstr(num):
+        ans=str(num)
+        length=len(ans)
+        if length<6:
+            f=(6-length)>>1
+            e=6-f
+            return " "*f+ans+" "*e
+    for i in range(1,h+1):
+        next_floor=[]
+        print(" "*5*(2**(h-i)-1),end="")
+        for item in floor:
+            if item:
+                next_floor.append(item.left)
+                next_floor.append(item.right)
+                print("  "+sstr(item.val)+"  ",end="")
+            else:
+                next_floor.append(None)
+                next_floor.append(None)
+                print(" "*10,end="")
+
+            print(" "*10*(2**(h-i)-1),end="")
+        print("")
+        floor=next_floor
+
 if __name__ == '__main__':
     preorder_seq = [4, 2, 1, 3, 6, 5, 7]
     middleorder_seq = [1, 2, 3, 4, 5, 6, 7]
-    treeRoot1 = maketree_complex([8, 8, 9, 2, 4, 7, 7], [9, 8, 4, 2, 7, 8, 7])
-    # my_tree = maketree([1, 2, 4, 5, 8, 9, 3, 6, 7], [4, 2, 8, 5, 9, 1, 6, 3, 7])
-    print(DLRnodg(treeRoot1))
-    print(LDRnodg(treeRoot1))
-    an = []
-    explore(treeRoot1, an)
-    print(an)
+    # treeRoot1 = maketree_complex([8, 8, 9, 2, 4, 7, 7], [9, 8, 4, 2, 7, 8, 7])
+    my_tree = maketree([1, 2, 4, 5, 8, 9, 3, 6, 7], [4, 2, 8, 5, 9, 1, 6, 3, 7])
+    # my_tree=maketree(preorder_seq, middleorder_seq)
+    # print(DLRnodg(treeRoot1))
+    # print(LDRnodg(treeRoot1))
+    # an = []
+    # explore(treeRoot1, an)
+    # print(an)
+    showtree(my_tree)

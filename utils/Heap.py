@@ -6,13 +6,18 @@
 # @File    : Heap.py
 # @Software: PyCharm
 
-class MinHeap:
-    def __init__(self):
+
+# 通过初始化传入flag来表示最小堆or最大堆
+# 这样避免了代码重复
+# 所以下面的最大堆可以不用了
+class Heap:
+    def __init__(self, flag=True):  # flag为True表示最小堆
         self.nums = []
         self.size = 0
+        self.flag = 1 if flag else -1
 
     def push(self, value):
-        self.nums.append(value)
+        self.nums.append(self.flag * value)
 
         idx = self.size
         father = (idx - 1) >> 1
@@ -27,7 +32,7 @@ class MinHeap:
     def pop(self):
         if self.size < 3:
             self.size -= 1
-            return self.nums.pop(0)
+            return self.flag * self.nums.pop(0)
 
         ans = self.nums[0]
         self.nums[0] = self.nums.pop()
@@ -49,13 +54,13 @@ class MinHeap:
                 left, right = (idx << 1) + 1, (idx + 1) << 1
             # 到位了直接return
             else:
-                return ans
+                return self.flag * ans
 
         if left < self.size:
             if self.nums[idx] > self.nums[left]:
                 self.nums[idx], self.nums[left] = self.nums[left], self.nums[idx]
 
-        return ans
+        return self.flag * ans
 
     def __bool__(self):
         return self.size != 0
@@ -113,7 +118,7 @@ class MaxHeap:
 # 当然利用最小堆就可以封装一个最大堆
 class BHeap:
     def __init__(self):
-        self.memo = MinHeap()
+        self.memo = Heap()
 
     def push(self, value):
         self.memo.push(-value)
@@ -126,7 +131,7 @@ class BHeap:
 
 
 if __name__ == '__main__':
-    heap = BHeap()
+    heap = Heap()
     for item in [17, 11, 15, 9, 16, 6, 13, 14, 5, 0]:
         heap.push(item)
 
